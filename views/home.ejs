@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<body  class=" ">
+
+   <div class=" my-3 py-2 flex flex-col items-center justify-center">
+    <h1 class="mb-4 text-3xl">Book Store</h1>
+    <a href="form" class="text-white bg-gradient-to-r from-purple-500 to-pink-500 hover:bg-gradient-to-l focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Add Books</a>
+    <div class="mt-5 flex  justify-center">
+        <div class="flex gap-3 justify-center flex-wrap  px-4">
+           <% if(data.length >0) { %>
+            <%  data.map((ele)=>{  %>
+
+                
+<div class="">
+    
+<div class="w-full max-w-sm bg-white  border border-gray-200 rounded-lg p-3 shadow-sm dark:bg-gray-800 dark:border-gray-700" style="height: 500px">
+    <a href="#">
+        <img class="p-2 " src="<%=ele.image%>" alt="product image" style="height: 300px; width: 100%;"/>
+    </a>
+    <div class="px-5 pb-5">
+        <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"><%=ele.title%></h5>
+        </a>
+        <a href="#">
+            <h5 class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"><%=ele.author%></h5>
+        </a>
+        <div class="flex flex-col gap-3 items-start mt-2.5 mb-5">
+            <!-- <div class="flex items-center space-x-1 rtl:space-x-reverse">
+        Limited :<%=ele.limited%> -->
+            <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-sm dark:bg-blue-200 dark:text-blue-800 ms-3">Category :<%=ele.category%></span>
+        </div>
+        <div class="flex mt-3 items-center   gap-5 justify-between">
+            <span class="text-3xl font-bold text-gray-900 dark:text-white">$<%=ele.price%></span>
+           <div>
+            <a href="/delete/<%=ele.id%>" class=" text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"">🗑️</a>
+            
+            <a href="/edit/<%=ele.id%>" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">🖊️</a>
+           </div>
+        </div>
+    </div>
+</div>
+
+</div>
+</div>
+         <%   }) %>
+
+           <%  } else{ %>
+                <h1 class="text-3xl mt-15">No Book Is Added Yet</h1>
+        <%   }%>
+        </div>
+    </div>
+   </div>
+</body>
+</html>
