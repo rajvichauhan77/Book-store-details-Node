@@ -38,7 +38,6 @@ routes.post('/insertbook',images,(req,res)=>{
         price,
         description,
         category,
-        limited,
         image
     })
     .then((data)=>{
@@ -113,7 +112,6 @@ routes.post(("/updatebook"),images,(req,res)=>{
         price,
         description,
         category,
-        limited,
         image
 
     })
@@ -135,8 +133,7 @@ else{
         author,
         price,
         description,
-        category,
-        limited
+        category
 
     })
     .then((data)=>{

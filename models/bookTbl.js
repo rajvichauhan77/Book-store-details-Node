@@ -22,10 +22,6 @@ const bookSchema  = mongoose.Schema({
         type:String,
         require:true
     },
-    limited:{
-        type:String,
-        require:true
-    },
     image:{
         type:String,
         require:true
